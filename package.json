@@ -1,0 +1,27 @@
+{
+  "name": "newspaper",
+  "version": "1.0.0",
+  "description": "artilce",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jyochsna/NewsPaper.git"
+  },
+  "author": "jyochsna",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jyochsna/NewsPaper/issues"
+  },
+  "homepage": "https://github.com/jyochsna/NewsPaper#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "cheerio": "^1.0.0-rc.3",
+    "express": "^4.17.1",
+    "express-handlebars": "^4.0.2",
+    "mongoose": "^5.9.7"
+  }
+}
