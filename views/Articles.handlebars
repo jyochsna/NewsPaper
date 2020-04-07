@@ -1,0 +1,52 @@
+<div class="container">
+    <div class="row single-article">
+        <div class="card col-md-12">
+            <div class="card-body">
+                <h5 class="card-title alert alert-dark"> {{article.title}} </h5>
+                <p class="card-text">{{article.description}}</p>
+                <a href="{{article.link}}" target="_blank" class="btn btn-primary">Read Article </a>
+                {{!-- <button class="btn btn-info" data-{{this._id}}>Articles Notes </button> --}}
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="row">
+        <div class="card col-md-4 addCommentBox">
+
+            <form action="/addComments/{{article._id}}" method="POST" class="card-panel">
+                <h5>Make comment about this Article</h5>
+                <div class="form-group">
+                    <label for="note-body">Comment</label>
+                    <input type="text" class="form-control" id="note-body" name="body" placeholder="Comment">
+                </div>
+
+                <button type="submit" value="submit" id="note-submit" class="btn btn-info"> Add Notes </button>
+            </form>
+        </div>
+
+
+        <div class=" col-md-8">
+            <div id="showingComments" class="container">
+
+                <h5>Comments:</h5>
+                <hr>
+                {{#if article.Notes}}
+                {{#each article.Notes}}
+                <div class="card comment-cards">
+                    <p> {{body}}
+                        <button type="button" class="close delete-note" aria-label="Close" data-note-id="{{_id}}">
+                            <span aria-hidden="true">&times;</span>
+                        </button> </p>
+                </div>
+                {{/each}}
+                {{else}}
+                <p>No Comments Yet.</p>
+                {{/if}}
+
+
+            </div>
+        </div>
+
+    </div>
+</div>

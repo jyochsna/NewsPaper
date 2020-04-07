@@ -1,0 +1,18 @@
+<div class="row">
+    <div class="col-md-12 ">
+        {{#each data}}
+        <div id="Article-Card" class="card">
+            <div class="card-body">
+                <h5 class="card-title alert alert-dark"> {{title}} </h5>
+                <hr>
+                <p class="card-text">{{description}}</p>
+                <a href="{{link}}" target="_blank" class="btn btn-primary">Read Article </a>
+                <button class="btn btn-danger deleteFromsaved-btn" data-id={{this._id}} > Delete From Saved </button>
+                <a href="/addComments/{{this._id}}" id="commentbtn"><img src="/assets/images/comment.png"
+                        width="40px" height="40px"></a>
+            </div>
+        </div>
+
+        {{/each}}
+    </div>
+</div>
