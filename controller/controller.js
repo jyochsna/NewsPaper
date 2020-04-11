@@ -2,7 +2,8 @@ const axios = require("axios");
 const db = require("../models/index");
 const cheerio = require("cheerio");
 
-module.exports = app =>{
+module.exports = function(app){
+    // app.get("/", (req, res) => res.render("index"));
     //scrape news article and saves in db
     app.get("/scrape", function(req, res){
         axios.get("https://www.latimes.com/").then (function (response){
@@ -26,6 +27,7 @@ module.exports = app =>{
             
         });
     });
+    
     app.get("/", function (req, res) {
 
         db.Articles.find({}).then(function (dbArticles) {
@@ -38,7 +40,10 @@ module.exports = app =>{
                 res.sendStatus(500);
             };
         });
+        
     });
+
+    
 
     //return json for all saved articles 
     app.get("/articles-json", function (req, res) {

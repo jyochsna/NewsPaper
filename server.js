@@ -26,7 +26,7 @@ app.set("view engine", "handlebars");
 // If deployed, use the deployed database. Otherwise use the local mongoHeadlines database
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
 
-mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true }).then(res => {
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true }).then(res => {
   console.log("connected to mongo")
 });
 // app.get ("/",function(req,res){
@@ -45,10 +45,10 @@ mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true 
 //     res.render("saved", hbsObject);
 //   });
 // })
-var routes = require("./controller/controller");
+var routes = require("./controller/controller.js");
 routes(app);
 
 // Start the server
-app.listen(process.env.PORT, function () {
+app.listen(PORT, function () {
   console.log("App running on port " + PORT + "!");
 });
