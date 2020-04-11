@@ -26,9 +26,11 @@ app.set("view engine", "handlebars");
 // If deployed, use the deployed database. Otherwise use the local mongoHeadlines database
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
 
-mongoose.connect(MONGODB_URI, { useNewUrlParser: true }).then(res => {
-  console.log("connected to mongo")
-});
+// mongoose.connect(MONGODB_URI, { useNewUrlParser: true }).then(res => {
+//   console.log("connected to mongo")
+// });
+
+mongoose.connect(MONGODB_URI);
 // app.get ("/",function(req,res){
 //   Article.find({"saved":false}, function(error,data){
 //     var hbsObject = {
