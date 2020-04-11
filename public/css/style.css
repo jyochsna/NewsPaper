@@ -1,5 +1,6 @@
 .navbar-brand {
     font-size: 30px;
+    
 }
 .nav {
     height: 150px;
@@ -13,11 +14,12 @@
 
 .jumbotron {
     height: 500px;
-    background-image: url("/assets/images/news.jpg");
+    background-image: url("/assets/images/paper.jpg");
     background-size: cover;
     box-shadow: 2px 2px 2px;
     opacity: 0.5; 
     position: relative;
+    
    
 }
 
@@ -33,10 +35,13 @@
 
 .caption h1 {
     font-size: 80px;
+    color:rgb(0,123,255) ;
+    font-weight: bolder;
 }
 
 .caption h5 {
-    font-size: 30px;
+    font-size: 50px;
+    color:rgb(0,123,255)
 }
 
 #Article-Card {

@@ -13,6 +13,21 @@ $(document).ready(function () {
             })
     });
 
+    // $(".readArticle").on("click", function (event) {
+    //     event.preventDefault();
+    //     console.log("DATA ID should be below==========")
+    //     var dataId = $(this).attr("data-id")
+    //     console.log(dataId)
+    //     // $.ajax({
+    //     //     method: "GET",
+    //     //     url: "/",
+    //     // }).then(() => location.href = "/")
+    //     //     .catch(err => {
+    //     //         console.log(err);
+    //     //         res.status(500)
+    //     //     })
+    // });
+
     $(".clearBtn").on("click", function (evt) {
         evt.preventDefault();
 
@@ -29,6 +44,7 @@ $(document).ready(function () {
     $(".saveArticle-btn").on("click", function (evt) {
         evt.preventDefault();
          var dataId = $(this).data("id");
+         console.log("!teeeeeeessstttt");
          console.log(dataId);
 
          $.ajax({

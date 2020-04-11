@@ -2,15 +2,18 @@ const axios = require("axios");
 const db = require("../models/index");
 const cheerio = require("cheerio");
 
-module.exports = function(app){
+module.exports = app => {
     // app.get("/", (req, res) => res.render("index"));
     //scrape news article and saves in db
     app.get("/scrape", function(req, res){
         axios.get("https://www.latimes.com/").then (function (response){
             const $ = cheerio.load(response.data);
+            console.log("!!!!!!!!!!!!!!!!!!");
+            console.log(response);
+            console.log("!!!!!!!!!!!!!!!!!!");
             $(".PromoSmall-content").each(function(i,element){
                 var result = {};
-
+console.log("I am in each...")
                 result.title = $(this).children(".PromoSmall-titleContainer").children(".PromoSmall-title").children("a").text();
                 result.link = $(this).children(".PromoSmall-titleContainer").children(".PromoSmall-title").children("a").attr("href");
                 result.description = $(this).children(".PromoSmall-description").text();
@@ -32,7 +35,8 @@ module.exports = function(app){
 
         db.Articles.find({}).then(function (dbArticles) {
             // console.log(dbArticles);
-
+            console.log(dbArticles)
+            console.log("+++++++")
             res.render("index", { data: dbArticles })
         }).catch(function (err) {
             if (err) {
